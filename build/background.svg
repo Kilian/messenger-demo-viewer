@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="190.5mm"
+   height="134.05556mm"
+   viewBox="0 0 675 475"
+   id="svg4150"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="background.svg">
+  <defs
+     id="defs4152" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="305.35714"
+     inkscape:cy="197.49999"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1855"
+     inkscape:window-height="1176"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4155">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(57.5,-283.43362)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:52.5px;line-height:125%;font-family:Carlito;-inkscape-font-specification:'Carlito, Bold';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="278.60291"
+       y="379.57648"
+       id="text4709"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4711"
+         x="278.60291"
+         y="379.57648"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:52.5px;line-height:125%;font-family:Carlito;-inkscape-font-specification:'Carlito, Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#0084ff;fill-opacity:1">Messenger Demo Viewer</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4736"
+       y="429.57648"
+       x="280.03146"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:52.5px;line-height:125%;font-family:Carlito;-inkscape-font-specification:'Carlito, Bold';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:Carlito;-inkscape-font-specification:'Carlito, Normal';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1"
+         y="429.57648"
+         x="280.03146"
+         id="tspan4738"
+         sodipodi:role="line">Drag right to install</tspan></text>
+    <path
+       sodipodi:type="star"
+       style="opacity:1;fill:#0084ff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path4740"
+       sodipodi:sides="3"
+       sodipodi:cx="232.5"
+       sodipodi:cy="515.57648"
+       sodipodi:r1="121.72443"
+       sodipodi:r2="60.862213"
+       sodipodi:arg1="0.78124881"
+       sodipodi:arg2="1.8284464"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 318.92857,601.29076 115.05497,547.56867 263.51646,397.87 Z"
+       inkscape:transform-center-x="-7.9610186"
+       inkscape:transform-center-y="4.2119052"
+       transform="matrix(0.09045877,0.33792942,-0.33792942,0.09045877,422.62322,445.66081)" />
+  </g>
+</svg>

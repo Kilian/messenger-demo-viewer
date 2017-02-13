@@ -1,0 +1,51 @@
+{
+  "name": "messenger-demo-viewer",
+  "productName": "Messenger Demo Viewer",
+  "homepage": "https://github.com/kilian/messenger-bot-viewer",
+  "version": "1.0.0",
+  "description": "Demo your messenger (bot) interaction in a screen without showing the sidebar with all your other personal chats",
+  "license": "ISC",
+  "repository": "https://github.com/kilian/messenger-bot-viewer",
+  "author": "Kilian Valkhof",
+  "scripts": {
+    "start": "electron .",
+    "dev": "NODE_ENV=development electron .",
+    "package": "electron-packager . messenger-demo-viewer --out=dist --ignore='^/dist$' --prune --asar --all --icon=build/icon",
+    "dist:win": "build -w --ia32 --x64",
+    "dist:mac": "build -m",
+    "dist:lin": "build -l deb tar.gz --ia32 --x64"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "electron-app",
+    "electron",
+    "messenger",
+    "bot"
+  ],
+  "dependencies": {
+    "node-localstorage": "^1.3.0"
+  },
+  "devDependencies": {
+    "electron": "^1.6.0",
+    "electron-builder": "^13.5.0",
+    "electron-debug": "^1.1.0",
+    "electron-packager": "^8.3.0",
+    "eslint": "^3.10.2",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.7.1"
+  },
+  "build": {
+    "appId": "com.kilianvalkhof.messenger-demo-bot",
+    "mac": {
+      "category": "public.app-category.social-networking"
+    },
+    "win": {},
+    "linux": {
+      "category": "Network"
+    }
+  }
+}
