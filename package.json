@@ -6,7 +6,11 @@
   "description": "Demo your messenger (bot) interaction in a screen without showing the sidebar with all your other personal chats",
   "license": "ISC",
   "repository": "https://github.com/kilian/messenger-bot-viewer",
-  "author": "Kilian Valkhof",
+  "author": {
+    "name" : "Kilian Valkhof",
+    "email" : "kilian@kilianvalkhof.com",
+    "url" : "https://kilianvalkhof.com"
+  },
   "scripts": {
     "start": "electron .",
     "dev": "NODE_ENV=development electron .",
