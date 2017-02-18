@@ -1,6 +1,7 @@
 const electron = require('electron');
 
-const { app, BrowserWindow, globalShortcut: gsc } = electron;
+const { app, BrowserWindow, globalShortcut: gsc, Menu: menu, shell } = electron;
+const APPVERSION = require('./package.json').version;
 const JSONStorage = require('node-localstorage').JSONStorage;
 
 if (process.env.NODE_ENV === 'development') {
@@ -83,4 +84,96 @@ app.on('ready', () => {
       storeWindowState();
     });
   });
+
+  const template = [{
+    label: app.getName(),
+    submenu: [{
+      label: 'Toggle Sidebar',
+      accelerator: 'CmdOrCtrl+b',
+      click() {
+        dispatchShortcutEvent('toggle-sidebar');
+      },
+    },
+    {
+      type: 'separator',
+    },
+    {
+      label: process.platform === 'darwin' ? 'About ' + app.getName() : 'Website',
+      click() {
+        shell.openExternal('https://messenger-demo-viewer.kilianvalkhof.com');
+      },
+    },
+    {
+      label: 'Support',
+      click() {
+        shell.openExternal('https://github.com/Kilian/messenger-demo-viewer/issues');
+      },
+    },
+    {
+      label: 'Check for updates (current: ' + APPVERSION + ')',
+      click() {
+        shell.openExternal('https://github.com/Kilian/messenger-demo-viewer/releases');
+      },
+    },
+      process.platform === 'darwin' ? {
+        type: 'separator',
+      } : false,
+      process.platform === 'darwin' ? {
+        label: 'Hide ' + app.getName(),
+        accelerator: 'Command+H',
+        role: 'hide',
+      } : false,
+      process.platform === 'darwin' ? {
+        label: 'Hide Others',
+        accelerator: 'Command+Alt+H',
+        role: 'hideothers'
+      } : false,
+      process.platform === 'darwin' ? {
+        label: 'Show All',
+        role: 'unhide'
+      } : false,
+    {
+      type: 'separator'
+    },
+    {
+      label: 'Quit',
+      accelerator: 'CmdOrCtrl+Q',
+      click() {
+        app.quit();
+      },
+    }].filter(x => x),
+  },
+  process.platform === 'darwin' ? {
+    label: 'Edit',
+    submenu: [{
+      label: 'Undo',
+      accelerator: 'CmdOrCtrl+Z',
+      selector: 'undo:'
+    }, {
+      label: 'Redo',
+      accelerator: 'Shift+CmdOrCtrl+Z',
+      selector: 'redo:'
+    }, {
+      type: 'separator'
+    }, {
+      label: 'Cut',
+      accelerator: 'CmdOrCtrl+X',
+      selector: 'cut:'
+    }, {
+      label: 'Copy',
+      accelerator: 'CmdOrCtrl+C',
+      selector: 'copy:'
+    }, {
+      label: 'Paste',
+      accelerator: 'CmdOrCtrl+V',
+      selector: 'paste:'
+    }, {
+      label: 'Select All',
+      accelerator: 'CmdOrCtrl+A',
+      selector: 'selectAll:'
+    }],
+  } : false].filter(x => x);
+
+  const menuBar = menu.buildFromTemplate(template.map(x => x));
+  menu.setApplicationMenu(menuBar);
 });
