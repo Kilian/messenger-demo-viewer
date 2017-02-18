@@ -1,8 +1,10 @@
 const electron = require('electron');
+const https = require('https');
 
 const { app, BrowserWindow, globalShortcut: gsc, Menu: menu, shell } = electron;
 const APPVERSION = require('./package.json').version;
 const JSONStorage = require('node-localstorage').JSONStorage;
+const compareVersions = require('compare-versions');
 
 if (process.env.NODE_ENV === 'development') {
   // eslint-disable-next-line global-require
@@ -48,6 +50,7 @@ app.on('ready', () => {
       mainWindow.maximize();
     }
     mainWindow.focus();
+    checkForUpdates();
   });
 
   const dispatchShortcutEvent = (ev) => {
@@ -143,37 +146,57 @@ app.on('ready', () => {
       },
     }].filter(x => x),
   },
-  process.platform === 'darwin' ? {
-    label: 'Edit',
-    submenu: [{
-      label: 'Undo',
-      accelerator: 'CmdOrCtrl+Z',
-      selector: 'undo:'
-    }, {
-      label: 'Redo',
-      accelerator: 'Shift+CmdOrCtrl+Z',
-      selector: 'redo:'
-    }, {
-      type: 'separator'
-    }, {
-      label: 'Cut',
-      accelerator: 'CmdOrCtrl+X',
-      selector: 'cut:'
-    }, {
-      label: 'Copy',
-      accelerator: 'CmdOrCtrl+C',
-      selector: 'copy:'
-    }, {
-      label: 'Paste',
-      accelerator: 'CmdOrCtrl+V',
-      selector: 'paste:'
-    }, {
-      label: 'Select All',
-      accelerator: 'CmdOrCtrl+A',
-      selector: 'selectAll:'
-    }],
-  } : false].filter(x => x);
+    process.platform === 'darwin' ? {
+      label: 'Edit',
+      submenu: [{
+        label: 'Undo',
+        accelerator: 'CmdOrCtrl+Z',
+        selector: 'undo:'
+      }, {
+        label: 'Redo',
+        accelerator: 'Shift+CmdOrCtrl+Z',
+        selector: 'redo:'
+      }, {
+        type: 'separator'
+      }, {
+        label: 'Cut',
+        accelerator: 'CmdOrCtrl+X',
+        selector: 'cut:'
+      }, {
+        label: 'Copy',
+        accelerator: 'CmdOrCtrl+C',
+        selector: 'copy:'
+      }, {
+        label: 'Paste',
+        accelerator: 'CmdOrCtrl+V',
+        selector: 'paste:'
+      }, {
+        label: 'Select All',
+        accelerator: 'CmdOrCtrl+A',
+        selector: 'selectAll:'
+      }],
+    } : false].filter(x => x);
 
   const menuBar = menu.buildFromTemplate(template.map(x => x));
   menu.setApplicationMenu(menuBar);
+
+
+  const checkForUpdates = () => {
+    https.get('https://messenger-demo-viewer.kilianvalkhof.com/latest.json?current=' + APPVERSION, (res) => {
+      let json = '';
+      res.on('data', (d) => {
+        json += d;
+      });
+
+      res.on('end', () => {
+        const latestVersion = JSON.parse(json).version;
+        if (compareVersions(latestVersion, APPVERSION) === 1) {
+          global.latestVersion = latestVersion;
+          dispatchShortcutEvent('show-update-msg');
+        }
+      });
+    }).on('error', (e) => {
+      console.error(e);
+    });
+  };
 });

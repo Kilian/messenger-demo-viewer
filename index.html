@@ -1,7 +1,60 @@
 <!doctype html>
 <html>
 <head>
+  <meta charset="utf-8">
   <title>Messenger Demo Viewer</title>
+
+  <style>
+  .updater {
+    font-size:16px;
+    z-index:1;
+    display:block;
+    background:rgba(0,123,255,0.9);
+    color:rgba(255,255,255,1);
+    width:100%;
+    left:0;
+    text-align:center;
+    line-height:2rem;
+    padding:1rem 0.5rem 0;
+    position:fixed;
+    transition:0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+    top:-4rem;
+    text-decoration:none;
+    cursor:default;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    padding-right:2.5rem;
+    font-family:sans-serif;
+    font-weight:bold;
+  }
+    .updater.active {
+      top:-1rem;
+    }
+    .updater:hover,
+    .updater:focus {
+      background:rgba(0,83,215,0.9);
+    }
+    .updater .hideme {
+      line-height:1.5rem;
+      width:1.5rem;
+      height:1.5rem;
+      display:block;
+      position:absolute;
+      right:3.5rem;
+      bottom:0.25rem;
+      border-radius:1.5rem;
+      background:rgba(255,255,255,0.5);
+      color: rgb(0,123,255);
+      font-size:1.6rem;
+      vertical-align:middle;
+    }
+    .updater .hideme:hover,
+    .updater .hideme:focus {
+      background:rgba(0,0,0,0.5);
+      color:rgba(255,255,255,0.7);
+    }
+  </style>
 </head>
 <body>
   <webview
@@ -9,6 +62,12 @@
     src="https://messenger.com"
     style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;"
   ></webview>
+
+  <div class="updater">
+     There's an update available! Get version <span class="version"></span>
+     <span title="Don't show this again until next available update" class="hideme">×</span>
+ </div>
+
   <script src="app.js"></script>
 </body>
 </html>
