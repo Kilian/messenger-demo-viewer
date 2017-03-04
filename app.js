@@ -25,7 +25,7 @@ const initial = `
      --closed: 0px;
      --state: var(--closed);
   }
-  ._4sp8._li > ._1enh {
+  ._4sp8 > ._1enh {
     max-width: var(--state);
     min-width: 0px;
     max-height: 100vh;
