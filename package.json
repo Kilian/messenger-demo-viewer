@@ -2,7 +2,7 @@
   "name": "messenger-demo-viewer",
   "productName": "Messenger Demo Viewer",
   "homepage": "https://github.com/kilian/messenger-bot-viewer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Demo your messenger (bot) interaction in a screen without showing the sidebar with all your other personal chats",
   "license": "ISC",
   "repository": "https://github.com/kilian/messenger-bot-viewer",
