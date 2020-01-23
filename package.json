@@ -17,7 +17,7 @@
     "package": "electron-packager . messenger-demo-viewer --out=dist --ignore='^/dist$' --prune --asar --all --icon=build/icon",
     "dist:win": "build -w --ia32 --x64",
     "dist:mac": "build -m",
-    "dist:lin": "build -l deb tar.gz --ia32 --x64"
+    "dist:lin": "build -l snap deb tar.gz --ia32 --x64"
   },
   "files": [
     "index.js"
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "electron": "^1.7.8",
-    "electron-builder": "^19.33.0",
+    "electron-builder": "^19.53.0",
     "electron-debug": "^1.4.0",
     "electron-packager": "^9.1.0",
     "eslint": "^4.8.0",
@@ -50,7 +50,10 @@
     },
     "win": {},
     "linux": {
-      "category": "Network"
+      "category": "Network",
+      "target": [
+        "snap"
+      ]
     }
   }
 }
