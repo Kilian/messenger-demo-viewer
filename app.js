@@ -21,13 +21,12 @@ webview.addEventListener('new-window', (e) => {
 // handle toggling of sidebar
 const initial = `
   :root {
-     --open: 420px;
-     --closed: 0px;
+     --open: none;
+     --closed: block;
      --state: var(--closed);
   }
   ._4sp8 > ._1enh {
-    max-width: var(--state);
-    min-width: 0px;
+    display: var(--state);
     max-height: 100vh;
     overflow: hidden;
     transition: .3s max-width ease;
