@@ -14,7 +14,7 @@
   "scripts": {
     "start": "electron .",
     "dev": "NODE_ENV=development electron .",
-    "package": "electron-packager . messenger-demo-viewer --out=dist --ignore='^/dist$' --prune --asar --all --icon=build/icon",
+    "package": "electron-packager . messenger-demo-viewer --out=dist --ignore='^/dist$' --prune --asar --icon=build/icon",
     "dist:win": "build -w --ia32 --x64",
     "dist:mac": "build -m",
     "dist:lin": "build -l deb tar.gz --ia32 --x64"
